@@ -1,0 +1,28 @@
+<nav class="container navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="{% url 'index' %}">Reservation Site</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'country-list' %}">Country</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'proxy-list' %}">Proxy</a>
+            </li>
+            <li class="nav-item">
+                <div class="dropdown">
+                    <span style="cursor: pointer;" class="nav-link dropdown-toggle" id="applicantDropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Applicant
+                    </span>
+                    <div class="dropdown-menu" aria-labelledby="applicantDropdownMenu">
+                        <a class="dropdown-item" href="{% url 'applicant-poland' %}">Poland</a>
+                        <a class="dropdown-item" href="{% url 'applicant-slovakia' %}">Slovakia</a>
+                        <a class="dropdown-item" href="{% url 'applicant-brta' %}">BRTA</a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>

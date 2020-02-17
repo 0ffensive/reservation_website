@@ -1,0 +1,251 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<h1 class="text-center">BRTA Information</h1>
+<div id="date-open-info"></div>
+<script>
+    setInterval(() => {
+        url = '/api/applicants/brta/date-open/';
+        fetch(url).then(response => {
+            return response.json();
+        }).then(data => {
+            element = document.querySelector('#date-open-info');
+            data['centers'].forEach(info => {
+                element.innerHTML += '<h4 class="text-center">' + info + '</h4>';
+            });
+        });
+    }, 10000);
+</script>
+
+<ul class="nav nav-tabs" id="tabs" role="tablist">
+    <li class="nav-item">
+        <a class="nav-link bg-transparent border-0 active" id="applicant-tab" data-toggle="tab" href="#applicant"
+            role="tab" aria-controls="applicant" aria-selected="true">Applicant</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link bg-transparent border-0" id="add-applicant-tab" data-toggle="tab" href="#add-applicant"
+            role="tab" aria-controls="add-applicant" aria-selected="false">Add Applicant</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link bg-transparent border-0" id="process-tab" data-toggle="tab" href="#process" role="tab"
+            aria-controls="process" aria-selected="false">Process</a>
+    </li>
+    <style>
+        .nav-item>a {
+            color: white;
+        }
+    </style>
+</ul>
+<div class="tab-content" id="tabs">
+    <!-- Applicant information -->
+    <div class="tab-pane fade show active" id="applicant" role="tabpanel" aria-labelledby="applicant-tab">
+        <span style="margin-right: 20px;">Fake applicant: <strong
+                id="fake-applicant-number">{{ fake_applicants|length }}</strong></span>
+        <span>Original applicant: <strong
+                id="original-applicant-number">{{ original_applicants|length }}</strong></span>
+        <script>
+            setInterval(() => {
+                url = '/api/applicants/brta/';
+                fetch(url).then(response => {
+                    return response.json();
+                }).then(data => {
+                    document.querySelector('#fake-applicant-number').innerHTML = data['fake'];
+                    document.querySelector('#original-applicant-number').innerHTML = data['original'];
+                });
+            }, 5000);
+        </script>
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-{{message.tags}}" role="alert">
+            <strong>{{ message }}</strong>
+        </div>
+        {% endfor %}
+        {% endif %}
+        {% if original_applicants %}
+        {% load static %}
+        <table class="table table-striped table-dark mt-2">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Date Reserved</th>
+                    <th scope="col">Priority</th>
+                    <th scope="col">Options</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for applicant in original_applicants %}
+                <tr>
+                    <th scope="row">{{ forloop.counter }}</th>
+                    <td scope="row">{{ applicant.username }}</td>
+                    <td scope="row">
+                        {% if applicant.date_reserved %}
+                        Reserved
+                        {% else %}
+                        Not Reserved
+                        {% endif %}
+                    </td>
+                    <td scope="row">{{ applicant.priority }}</td>
+                    <td scope="row">
+                        <button type="button" class="btn bg-info ml-3" data-toggle="modal"
+                            data-target="#edit-{{ applicant.id }}-modal-label">
+                            <img src="{% static 'icons/edit-2.svg' %}">
+                        </button>
+                        <div class="modal fade" id="edit-{{ applicant.id }}-modal-label" tabindex="-1" role="dialog"
+                            aria-labelledby="edit-modal-label" aria-hidden="true">
+                            {% include 'applicant/brta/edit.html' with applicant=applicant %}
+                        </div>
+                        <a class="btn btn-danger" href="{% url 'applicant-brta-delete' applicant.id %}">
+                            <span aria-hidden="true">&times;</span>
+                        </a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <p class="mt-2">Sorry. You have not added any original user yet.</p>
+        {% endif %}
+    </div>
+    <!-- ./Applicant information -->
+    <!-- Add applicant -->
+    <div class="tab-pane fade mt-2" id="add-applicant" role="tabpanel" aria-labelledby="add-applicant-tab">
+        <div class="row">
+            <div class="col-lg-6 col-sm-12 mb-3">
+                <div class="card">
+                    <div class="card-body" style="color: black;">
+                        <div class="card-title">
+                            <span class="h3">Fake User</span>
+                        </div>
+                        <form action="{% url 'applicant-brta-add'  %}" method='POST' class="form mb-3"
+                            enctype='multipart/form-data'>
+                            {% csrf_token %}
+                            <input type="hidden" name="applicant_type" value="fake">
+                            <div class="form-group">
+                                <input type="file" id="file" name="file" class="form-control-file btn btn-outline-info"
+                                    required>
+                                <small class="form-text text-muted">** Please upload a text file that contains
+                                    username:password in each line. Otherwise the data may no be uploaded properly in
+                                    the
+                                    database.</small>
+                            </div>
+                            <button type="submit" class="btn btn-info">Upload</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-sm-12">
+                <div class="card">
+                    <div class="card-body" style="color: black;">
+                        <div class="card-title">
+                            <span class="h3">Original User</span>
+                        </div>
+                        <form action="{% url 'applicant-brta-add' %}" method='POST' class="form mb-3">
+                            {% csrf_token %}
+                            <input type="hidden" name="applicant_type" value="original">
+                            <div class="form-group">
+                                <lable for="username">Username</lable>
+                                <input class="form-control" name="username" id="username" type="text"
+                                    placeholder="Username" required>
+                            </div>
+                            <div class="form-group">
+                                <lable for="password">Password</lable>
+                                <input class="form-control" name="password" id="password" type="text"
+                                    placeholder="Password" required>
+                            </div>
+                            <div class="form-group">
+                                <lable for="priority">Priority</lable>
+                                <input class="form-control" name="priority" id="priority" type="number"
+                                    placeholder="Applicant Priority" required>
+                            </div>
+                            <div class="row mx-1">
+                                <button type="reset" class="btn btn-outline-danger px-4 mt-4">Reset</button>
+                                <button type="submit" class="btn btn-primary mt-4 px-4 ml-auto">Save</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ./Add applicant -->
+    <!-- Process -->
+    <div class="tab-pane fade" id="process" role="tabpanel" aria-labelledby="process-tab">
+        <div class="card" style="color: black;">
+            <div class="card-body">
+                <div class="card-title">
+                    <div class="row">
+                        <span class="h4 mr-auto">
+                            Process Title (Process Number)
+                        </span>
+                        <span>
+                            <button type="button" class="btn btn-info mr-2">Edit</button>
+                            <button type="button" class="btn btn-info">Delete</button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion" id="process-accordion">
+            <div class="card bg-dark">
+                <div class="card-header" id="heading">
+                    <div class="row">
+                        <div style="cursor: pointer; color: white;" class="mt-2 ml-4" data-toggle="collapse"
+                            data-target="#collapse" aria-expanded="false" aria-controls="collapse">
+                        </div>
+                        <button type="button" class="btn bg-transparent ml-3" data-toggle="modal"
+                            data-target="#edit--modal">
+                            <img src="{% static 'icons/edit-2.svg' %}">
+                        </button>
+                        <div class="modal fade" id="edit--modal" tabindex="-1" role="dialog"
+                            aria-labelledby="country-modal-label" aria-hidden="true">
+                        </div>
+                        <button type="button" class="btn btn-info ml-auto" data-toggle="modal"
+                            data-target="#add--center-modal">
+                            Add New Center
+                        </button>
+                        <div class="modal fade" id="add--center-modal" tabindex="-1" role="dialog"
+                            aria-labelledby="-center-modal-label" aria-hidden="true">
+                        </div>
+                        <a class="btn btn-danger ml-2" href="">Delete</a>
+                    </div>
+                    <div id="collapse" class="collapse" aria-labelledby="heading{{ forloop.counter }}"
+                        data-parent="#country-accordion">
+                        <div class="card-body">
+                            <table class="table table-striped table-dark">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Center Name</th>
+                                        <th scope="col">Center Code</th>
+                                        <th scope="col">Options</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>A</td>
+                                        <td>B</td>
+                                        <td>
+                                            <button type="button" class="btn btn-info" data-toggle="modal"
+                                                data-target="#edit---center-modal">
+                                                Edit
+                                            </button>
+                                            <div class="modal fade" id="edit---center-modal" tabindex="-1" role="dialog"
+                                                aria-labelledby="-center-modal-label" aria-hidden="true">
+                                            </div>
+                                            <a class="btn btn-danger" href="">Delete</a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ./Process -->
+</div>
+
+{% endblock content %}

@@ -1,0 +1,63 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<div class="mt-2">
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-{{message.tags}}" role="alert">
+        <strong>{{ message }}</strong>
+    </div>
+    {% endfor %}
+    {% endif %}
+    <div class="row" style="color: black;">
+        <div class="col-lg-6 col-sm-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="card-title row mx-1">
+                        <span class="h3">Free Proxy</span>
+                        <a href="{% url 'proxy-delete-free' %}" class="btn btn-outline-danger ml-auto">Delete All</a>
+                    </div>
+                    <form action="{% url 'proxy-add-free' %}" method='POST' class="form mb-3"
+                        enctype='multipart/form-data'>
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <input type="file" id="file" name="file" class="form-control-file btn btn-outline-info"
+                                required>
+                            <small class="form-text text-muted">** Please upload a text file that contains
+                                ip_address:port in each line. Otherwise the data may no be uploaded properly in the
+                                database.</small>
+                        </div>
+                        <button type="submit" class="btn btn-info">Upload</button>
+                    </form>
+                    <p><strong>Total Free Proxy: </strong> {{ free_proxy|length }}</p>
+                    <p><strong>Used Free Proxy: </strong> {{ free_proxy_used|length }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-sm-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="card-title row mx-1">
+                        <span class="h3">Authenticated Proxy</span>
+                        <a href="{% url 'proxy-delete-authenticated' %}" class="btn btn-outline-danger ml-auto">Delete
+                            All</a>
+                    </div>
+                    <form action="{% url 'proxy-add-authenticated' %}" method='POST' class="form mb-3"
+                        enctype='multipart/form-data'>
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <input type="file" id="file" name="file" class="form-control-file btn btn-outline-info"
+                                required>
+                            <small class="form-text text-muted">** Please upload a text file that contains
+                                ip_address:port:username:password in each line. Otherwise the data may no be uploaded
+                                properly in the database.</small>
+                        </div>
+                        <button type="submit" class="btn btn-info">Upload</button>
+                    </form>
+                    <p><strong>Total Authenticated Proxy: </strong> {{ authenticated_proxy|length }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

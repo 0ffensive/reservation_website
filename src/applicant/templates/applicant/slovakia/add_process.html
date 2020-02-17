@@ -1,0 +1,57 @@
+<div class="modal-dialog modal-dialog-centered" role="document" style="color: black;">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="add-process-modal-label">Add New Process</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <form action="{% url 'applicant-slovakia-process-add' %}" method='POST'>
+                {% csrf_token %}
+                <div class="form-group">
+                    <lable for="center">Center</lable>
+                    <select name="center" id="center" class="custom-select" required>
+                        <option selected class="text-muted">Select a center</option>
+                        {% for center in centers %}
+                        <option value="{{ center.code }}">{{ center.name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="form-group">
+                    <lable for="month">Month</lable>
+                    <select name="month" id="month" class="custom-select" required>
+                        <option value="1">January</option>
+                        <option value="2">February</option>
+                        <option value="3">March</option>
+                        <option value="4">April</option>
+                        <option value="5">May</option>
+                        <option value="6">June</option>
+                        <option value="7">July</option>
+                        <option value="8">August</option>
+                        <option value="9">September</option>
+                        <option value="10">October</option>
+                        <option value="11">November</option>
+                        <option value="12">December</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <lable for="process_type">Process Type</lable>
+                    <select name="process_type" id="process_type" class="custom-select" required>
+                        <option value="0">Date Checking</option>
+                        <option value="1">Date Reservation</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <lable for="number">Number of Process</lable>
+                    <input class="form-control" name="number" id="number" type="number" placeholder="Number of Process"
+                        value="1" required>
+                </div>
+                <div class="row mx-1">
+                    <button type="reset" class="btn btn-outline-danger px-4 mt-4">Reset</button>
+                    <button type="submit" class="btn btn-primary mt-4 px-4 ml-auto">Add Process</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

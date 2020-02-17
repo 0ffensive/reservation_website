@@ -1,0 +1,35 @@
+<div class="modal-dialog modal-dialog-centered" role="document" style="color: black;">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="edit-modal-label">Update Applicant Information</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <form action="{% url 'applicant-brta-edit' applicant.id %}" method='POST'>
+                {% csrf_token %}
+                <input type="hidden" name="applicant_type" value="original">
+                <div class="form-group">
+                    <lable for="username">Username</lable>
+                    <input class="form-control" name="username" id="username" type="text" placeholder="Username"
+                        value="{{ applicant.username }}" required>
+                </div>
+                <div class="form-group">
+                    <lable for="password">Password</lable>
+                    <input class="form-control" name="password" id="password" type="text" placeholder="Password"
+                        value="{{ applicant.password }}" required>
+                </div>
+                <div class="form-group">
+                    <lable for="priority">Priority</lable>
+                    <input class="form-control" name="priority" id="priority" type="number"
+                        value="{{ applicant.priority }}" placeholder="Applicant Priority" required>
+                </div>
+                <div class="row mx-1">
+                    <button type="reset" class="btn btn-outline-danger px-4 mt-4">Reset</button>
+                    <button type="submit" class="btn btn-primary mt-4 px-4 ml-auto">Update</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

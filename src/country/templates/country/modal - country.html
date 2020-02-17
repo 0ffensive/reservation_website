@@ -1,0 +1,47 @@
+<div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content" style="color: black">
+        {% if country %}
+            <div class="modal-header">
+                <h5 class="modal-title" id="country-modal-label">Edit Country</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="{% url 'country-update' country.id %}" method='POST'>
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <lable for="name{{ country.id }}">Country</lable>
+                        <input class="form-control" name="name{{ country.id }}" id="name{{ country.id }}" type="text" placeholder="Country Name" value="{{ country.name }}" required>
+                    </div>
+                    <div class="form-group">
+                        <lable for="url{{ country.id }}">URL</lable>
+                        <input class="form-control" name="url{{ country.id }}" id="url{{ country.id }}" type="text" placeholder="Base URL" value="{{ country.url }}" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary px-3">Update</button>
+                </form>
+            </div>
+        {% else %}
+            <div class="modal-header">
+                <h5 class="modal-title" id="country-modal-label">New Country</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="{% url 'country-add' %}" method='POST'>
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <lable for="name">Country</lable>
+                        <input class="form-control" name="name" id="name" type="text" placeholder="Country Name" required>
+                    </div>
+                    <div class="form-group">
+                        <lable for="url">URL</lable>
+                        <input class="form-control" name="url" id="url" type="text" placeholder="Base URL" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary px-3">Add</button>
+                </form>
+            </div>
+        {% endif %}
+    </div>
+</div>
