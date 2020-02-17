@@ -1,0 +1,150 @@
+gate.smartproxy.com:7000:sp21504f08:sp21504f08:Random
+us.smartproxy.com:10000:sp21504f08:sp21504f08:USA
+ca.smartproxy.com:20000:sp21504f08:sp21504f08:Canada
+gb.smartproxy.com:30000:sp21504f08:sp21504f08:GB
+de.smartproxy.com:20000:sp21504f08:sp21504f08:Germany
+fr.smartproxy.com:40000:sp21504f08:sp21504f08:France
+es.smartproxy.com:10000:sp21504f08:sp21504f08:Spain
+it.smartproxy.com:20000:sp21504f08:sp21504f08:Italy
+se.smartproxy.com:20000:sp21504f08:sp21504f08:Sweden
+gr.smartproxy.com:30000:sp21504f08:sp21504f08:Greece
+pt.smartproxy.com:20000:sp21504f08:sp21504f08:Portugal
+nl.smartproxy.com:10000:sp21504f08:sp21504f08:Netherlands
+be.smartproxy.com:40000:sp21504f08:sp21504f08:Belgium
+ru.smartproxy.com:40000:sp21504f08:sp21504f08:Russia
+ua.smartproxy.com:40000:sp21504f08:sp21504f08:Ukraine
+pl.smartproxy.com:20000:sp21504f08:sp21504f08:Poland
+il.smartproxy.com:30000:sp21504f08:sp21504f08:Israel
+tr.smartproxy.com:40000:sp21504f08:sp21504f08:Turkey
+au.smartproxy.com:30000:sp21504f08:sp21504f08:Australia
+my.smartproxy.com:30000:sp21504f08:sp21504f08:Malaysia
+th.smartproxy.com:30000:sp21504f08:sp21504f08:Thailand
+kr.smartproxy.com:10000:sp21504f08:sp21504f08:South Korea
+jp.smartproxy.com:30000:sp21504f08:sp21504f08:Japan
+ph.smartproxy.com:40000:sp21504f08:sp21504f08:Philippines
+sg.smartproxy.com:10000:sp21504f08:sp21504f08:Singapore
+cn.smartproxy.com:30000:sp21504f08:sp21504f08:China
+hk.smartproxy.com:10000:sp21504f08:sp21504f08:Hong Kong
+tw.smartproxy.com:20000:sp21504f08:sp21504f08:Taiwan
+in.smartproxy.com:10000:sp21504f08:sp21504f08:India
+pk.smartproxy.com:10000:sp21504f08:sp21504f08:Pakistan
+ir.smartproxy.com:30000:sp21504f08:sp21504f08:Iran
+id.smartproxy.com:10000:sp21504f08:sp21504f08:Indonesia
+az.smartproxy.com:30000:sp21504f08:sp21504f08:Azerbaijan
+kz.smartproxy.com:40000:sp21504f08:sp21504f08:Kazakhstan
+ae.smartproxy.com:20000:sp21504f08:sp21504f08:UAE
+mx.smartproxy.com:20000:sp21504f08:sp21504f08:Mexico
+br.smartproxy.com:10000:sp21504f08:sp21504f08:Brazil
+ar.smartproxy.com:10000:sp21504f08:sp21504f08:Argentina
+cl.smartproxy.com:30000:sp21504f08:sp21504f08:Chile
+pe.smartproxy.com:40000:sp21504f08:sp21504f08:Peru
+ec.smartproxy.com:20000:sp21504f08:sp21504f08:Ecuador
+co.smartproxy.com:30000:sp21504f08:sp21504f08:Colombia
+za.smartproxy.com:40000:sp21504f08:sp21504f08:South Africa
+eg.smartproxy.com:20000:sp21504f08:sp21504f08:Egypt
+ao.smartproxy.com:18000:sp21504f08:sp21504f08:Angola
+cm.smartproxy.com:19000:sp21504f08:sp21504f08:Cameroon
+cf.smartproxy.com:10000:sp21504f08:sp21504f08:Central African Republic
+td.smartproxy.com:11000:sp21504f08:sp21504f08:Chad
+bj.smartproxy.com:12000:sp21504f08:sp21504f08:Benin
+et.smartproxy.com:13000:sp21504f08:sp21504f08:Ethiopia
+dj.smartproxy.com:14000:sp21504f08:sp21504f08:Djibouti
+gm.smartproxy.com:15000:sp21504f08:sp21504f08:Gambia
+gh.smartproxy.com:43000:sp21504f08:sp21504f08:Ghana
+ke.smartproxy.com:45000:sp21504f08:sp21504f08:Kenya
+lr.smartproxy.com:46000:sp21504f08:sp21504f08:Liberia
+mg.smartproxy.com:47000:sp21504f08:sp21504f08:Madagascar
+ml.smartproxy.com:48000:sp21504f08:sp21504f08:Mali
+mr.smartproxy.com:16000:sp21504f08:sp21504f08:Mauritania
+mu.smartproxy.com:17000:sp21504f08:sp21504f08:Mauritius
+ma.smartproxy.com:40000:sp21504f08:sp21504f08:Morocco
+mz.smartproxy.com:41000:sp21504f08:sp21504f08:Mozambique
+ng.smartproxy.com:42000:sp21504f08:sp21504f08:Nigeria
+sn.smartproxy.com:49000:sp21504f08:sp21504f08:Senegal
+sc.smartproxy.com:10000:sp21504f08:sp21504f08:Seychelles
+zw.smartproxy.com:11000:sp21504f08:sp21504f08:Zimbabwe
+ss.smartproxy.com:12000:sp21504f08:sp21504f08:South Sudan
+sd.smartproxy.com:31000:sp21504f08:sp21504f08:Sudan
+tg.smartproxy.com:32000:sp21504f08:sp21504f08:Togo
+tn.smartproxy.com:33000:sp21504f08:sp21504f08:Tunisia
+ug.smartproxy.com:34000:sp21504f08:sp21504f08:Uganda
+zm.smartproxy.com:35000:sp21504f08:sp21504f08:Zambia
+af.smartproxy.com:36000:sp21504f08:sp21504f08:Afghanistan
+bh.smartproxy.com:37000:sp21504f08:sp21504f08:Bahrain
+bd.smartproxy.com:41000:sp21504f08:sp21504f08:Bangladesh
+bt.smartproxy.com:45000:sp21504f08:sp21504f08:Bhutan
+mm.smartproxy.com:46000:sp21504f08:sp21504f08:Myanmar
+kh.smartproxy.com:47000:sp21504f08:sp21504f08:Cambodia
+iq.smartproxy.com:44000:sp21504f08:sp21504f08:Iraq
+jo.smartproxy.com:26000:sp21504f08:sp21504f08:Jordan
+lb.smartproxy.com:27000:sp21504f08:sp21504f08:Lebanon
+mv.smartproxy.com:28000:sp21504f08:sp21504f08:Maldives
+mn.smartproxy.com:29000:sp21504f08:sp21504f08:Mongolia
+om.smartproxy.com:30000:sp21504f08:sp21504f08:Oman
+qa.smartproxy.com:44000:sp21504f08:sp21504f08:Qatar
+sa.smartproxy.com:45000:sp21504f08:sp21504f08:Saudi Arabia
+tm.smartproxy.com:47000:sp21504f08:sp21504f08:Turkmenistan
+uz.smartproxy.com:48000:sp21504f08:sp21504f08:Uzbekistan
+ye.smartproxy.com:49000:sp21504f08:sp21504f08:Yemen
+al.smartproxy.com:33000:sp21504f08:sp21504f08:Albania
+ad.smartproxy.com:34000:sp21504f08:sp21504f08:Andorra
+at.smartproxy.com:35000:sp21504f08:sp21504f08:Austria
+am.smartproxy.com:42000:sp21504f08:sp21504f08:Armenia
+ba.smartproxy.com:37000:sp21504f08:sp21504f08:Bosnia and Herzegovina
+bg.smartproxy.com:38000:sp21504f08:sp21504f08:Bulgaria
+by.smartproxy.com:39000:sp21504f08:sp21504f08:Belarus
+hr.smartproxy.com:40000:sp21504f08:sp21504f08:Croatia
+cy.smartproxy.com:48000:sp21504f08:sp21504f08:Cyprus
+cz.smartproxy.com:26000:sp21504f08:sp21504f08:Czech Republic
+dk.smartproxy.com:27000:sp21504f08:sp21504f08:Denmark
+ee.smartproxy.com:28000:sp21504f08:sp21504f08:Estonia
+fi.smartproxy.com:41000:sp21504f08:sp21504f08:Finland
+ge.smartproxy.com:43000:sp21504f08:sp21504f08:Georgia
+hu.smartproxy.com:43000:sp21504f08:sp21504f08:Hungary
+is.smartproxy.com:23000:sp21504f08:sp21504f08:Iceland
+ie.smartproxy.com:24000:sp21504f08:sp21504f08:Ireland
+lv.smartproxy.com:22000:sp21504f08:sp21504f08:Latvia
+li.smartproxy.com:23000:sp21504f08:sp21504f08:Liechtenstein
+lt.smartproxy.com:24000:sp21504f08:sp21504f08:Lithuania
+lu.smartproxy.com:25000:sp21504f08:sp21504f08:Luxembourg
+mc.smartproxy.com:10000:sp21504f08:sp21504f08:Monaco
+md.smartproxy.com:11000:sp21504f08:sp21504f08:Moldova
+me.smartproxy.com:12000:sp21504f08:sp21504f08:Montenegro
+no.smartproxy.com:13000:sp21504f08:sp21504f08:Norway
+ro.smartproxy.com:13000:sp21504f08:sp21504f08:Romania
+rs.smartproxy.com:14000:sp21504f08:sp21504f08:Serbia
+sk.smartproxy.com:15000:sp21504f08:sp21504f08:Slovakia
+si.smartproxy.com:16000:sp21504f08:sp21504f08:Slovenia
+ch.smartproxy.com:29000:sp21504f08:sp21504f08:Switzerland
+mk.smartproxy.com:30000:sp21504f08:sp21504f08:Macedonia
+bs.smartproxy.com:17000:sp21504f08:sp21504f08:Bahamas
+bz.smartproxy.com:18000:sp21504f08:sp21504f08:Belize
+vg.smartproxy.com:19000:sp21504f08:sp21504f08:British Virgin Islands
+cr.smartproxy.com:31000:sp21504f08:sp21504f08:Costa Rica
+cu.smartproxy.com:32000:sp21504f08:sp21504f08:Cuba
+dm.smartproxy.com:17000:sp21504f08:sp21504f08:Dominica
+ht.smartproxy.com:18000:sp21504f08:sp21504f08:Haiti
+hn.smartproxy.com:19000:sp21504f08:sp21504f08:Honduras
+jm.smartproxy.com:20000:sp21504f08:sp21504f08:Jamaica
+aw.smartproxy.com:21000:sp21504f08:sp21504f08:Aruba
+pa.smartproxy.com:20000:sp21504f08:sp21504f08:Panama
+pr.smartproxy.com:21000:sp21504f08:sp21504f08:Puerto Rico
+tt.smartproxy.com:22000:sp21504f08:sp21504f08:Trinidad and Tobago
+fj.smartproxy.com:38000:sp21504f08:sp21504f08:Fiji
+nz.smartproxy.com:39000:sp21504f08:sp21504f08:New Zealand
+bo.smartproxy.com:40000:sp21504f08:sp21504f08:Bolivia
+py.smartproxy.com:14000:sp21504f08:sp21504f08:Paraguay
+uy.smartproxy.com:15000:sp21504f08:sp21504f08:Uruguay
+ci.smartproxy.com:44000:sp21504f08:sp21504f08:Cote d Ivoire
+sy.smartproxy.com:20000:sp21504f08:sp21504f08:Syria
+city.smartproxy.com:21000:sp21504f08:sp21504f08:New York
+city.smartproxy.com:21050:sp21504f08:sp21504f08:Los Angeles
+city.smartproxy.com:21100:sp21504f08:sp21504f08:Chicago
+city.smartproxy.com:21150:sp21504f08:sp21504f08:Houston
+city.smartproxy.com:21200:sp21504f08:sp21504f08:Miami
+city.smartproxy.com:21250:sp21504f08:sp21504f08:London
+city.smartproxy.com:21300:sp21504f08:sp21504f08:Berlin
+city.smartproxy.com:21350:sp21504f08:sp21504f08:Moscow
+vn.smartproxy.com:46000:sp21504f08:sp21504f08:Vietnam
+mt.smartproxy.com:49000:sp21504f08:sp21504f08:Unknown1
+ve.smartproxy.com:16000:sp21504f08:sp21504f08:Unknown2

@@ -1,0 +1,31 @@
+Ankara	550	Slovakia
+Astana	616	Slovakia
+Beijing	596	Slovakia
+Poland Delhi-Delhi Employment	1	VFS Global
+Poland Delhi-Delhi Student	2	VFS Global
+Beirut	1081	Slovakia
+Berlin	556	Slovakia
+Cairo	576	Slovakia
+Canberra	565	Slovakia
+Hanoi	570	Slovakia
+Istanbul	574	Slovakia
+Jakarta	575	Slovakia
+Kiev	581	Slovakia
+London	584	Slovakia
+Minsk	588	Slovakia
+Moscow	590	Slovakia
+Nairobi	591	Slovakia
+Nicosia	592	Slovakia
+Ottawa	594	Slovakia
+Pretoria	598	Slovakia
+Saint Petersburg	601	Slovakia
+Seoul	604	Slovakia
+Shanghai	618	Slovakia
+Sofia	603	Slovakia
+Tehran	608	Slovakia
+Tel Aviv	609	Slovakia
+TEST	545	Slovakia
+Uzgorod	546	Slovakia
+Washington	614	Slovakia
+Zagreb	615	Slovakia
+New Delhi	567	Slovakia
